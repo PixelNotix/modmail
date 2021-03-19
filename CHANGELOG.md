@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project mostly adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html);
 however, insignificant breaking changes do not guarantee a major version bump, see the reasoning [here](https://github.com/kyb3r/modmail/issues/319). If you're a plugin developer, note the "BREAKING" section.
 
+# v3.9.0
+
+### Breaking
+
+- `on_thread_initiate` and `on_thread_ready` events now have `thread, creator, category, initial_message` as additional arguments.
+
+### Fixed
+
+- `confirm_thread_creation` now properly works when a user opens a thread using react to contact. ([GH #2930](https://github.com/kyb3r/modmail/issues/2930), [PR #2971](https://github.com/kyb3r/modmail/pull/2971))
+- `?disable all/new` now disables react to contact threads. ([GH #2969](https://github.com/kyb3r/modmail/issues/2969), [PR #2971](https://github.com/kyb3r/modmail/pull/2971))
+- Ghost errors are no longer raised when threads are created using non-organic methods.
+
+### Internal
+
+- `thread.reply` now returns (msg_to_user, msg_to_thread). Can be useful in plugins.
 
 # v3.8.6
 
